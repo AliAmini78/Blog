@@ -16,5 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/post', function () {
+
+    $posts = \App\Models\Post::query()->get();
+
+    return response()->json($posts);
+});
 
 require __DIR__.'/auth.php';
