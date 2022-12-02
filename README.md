@@ -1,2 +1,2 @@
 # Blog
-make Blog web application with Laravel 8
+make Blog web application with Laravel 9
