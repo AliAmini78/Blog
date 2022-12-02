@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,7 @@ Route::get('/', function () {
 Route::get('/post', function () {
 
     $posts = \App\Models\Post::query()->get();
-
+    Artisan::call('migrate');
     return response()->json($posts);
 });
 
