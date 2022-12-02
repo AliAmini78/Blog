@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    Artisan::call('migrate');
     return view('welcome');
 });
-Route::get('/post', function () {
+
+Route::get('post', function () {
 
     $posts = \App\Models\Post::query()->get();
     Artisan::call('migrate');
